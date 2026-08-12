@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Data Analyst & Data Scientist portfolio — financial research, machine learning, and analytics projects.">
+  <title>Data Analyst Portfolio</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #0b0f19;
+      --surface: #121826;
+      --surface-2: #1a2234;
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #e8edf5;
+      --muted: #94a3b8;
+      --accent: #6366f1;
+      --accent-2: #22d3ee;
+      --accent-glow: rgba(99, 102, 241, 0.35);
+      --success: #34d399;
+      --radius: 14px;
+      --header-h: 72px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      height: var(--header-h);
+      background: rgba(11, 15, 25, 0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: grid;
+      place-items: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff !important;
+      font-weight: 600;
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px var(--accent-glow);
+    }
+
+    /* Hero */
+    .hero {
+      padding: calc(var(--header-h) + 4rem) 0 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.18), transparent 45%),
+        radial-gradient(circle at 80% 10%, rgba(34, 211, 238, 0.12), transparent 40%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      color: #c7d2fe;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 10px var(--success);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, #a5b4fc, var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.85rem 1.35rem;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #818cf8);
+      color: #fff;
+      box-shadow: 0 10px 30px var(--accent-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: var(--surface-2);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: #222c42;
+    }
+
+    /* Sections */
+    section {
+      padding: 4rem 0;
+    }
+
+    .section-head {
+      margin-bottom: 2.25rem;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 600px;
+    }
+
+    /* Summary */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .summary-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.5rem;
+    }
+
+    .summary-card .icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .summary-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .summary-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* Timeline / Education & Experience */
+    .timeline {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.25rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: border-color 0.2s;
+    }
+
+    .timeline-item:hover {
+      border-color: rgba(99, 102, 241, 0.3);
+    }
+
+    .timeline-marker {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(99, 102, 241, 0.15);
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .timeline-item h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .timeline-item .subtitle {
+      color: var(--accent-2);
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(52, 211, 153, 0.12);
+      border: 1px solid rgba(52, 211, 153, 0.25);
+      color: #6ee7b7;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(99, 102, 241, 0.35);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .project-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      background: rgba(99, 102, 241, 0.15);
+    }
+
+    .project-card:nth-child(2) .project-icon { background: rgba(34, 211, 238, 0.15); }
+    .project-card:nth-child(3) .project-icon { background: rgba(52, 211, 153, 0.15); }
+    .project-card:nth-child(4) .project-icon { background: rgba(251, 191, 36, 0.15); }
+    .project-card:nth-child(5) .project-icon { background: rgba(244, 114, 182, 0.15); }
+    .project-card:nth-child(6) .project-icon { background: rgba(167, 139, 250, 0.15); }
+
+    .project-card h3 {
+      font-size: 1.1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      flex: 1;
+      line-height: 1.65;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .meta-pill {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--accent-2);
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-top: 0.25rem;
+      transition: gap 0.2s;
+    }
+
+    .project-link:hover {
+      gap: 0.55rem;
+    }
+
+    /* Skills */
+    .skills-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .skill-tag {
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      color: #c7d2fe;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .skill-tag:hover {
+      background: rgba(99, 102, 241, 0.22);
+      transform: translateY(-2px);
+    }
+
+    /* Contact */
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .contact-info {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem;
+    }
+
+    .contact-info h3 {
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-info > p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-detail span:first-child {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(99, 102, 241, 0.15);
+      display: grid;
+      place-items: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .contact-detail a {
+      color: var(--accent-2);
+      transition: opacity 0.2s;
+    }
+
+    .contact-detail a:hover {
+      opacity: 0.8;
+    }
+
+    form {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.1rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.45rem;
+      color: #cbd5e1;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      color: var(--text);
+      font: inherit;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: rgba(99, 102, 241, 0.5);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-note {
+      margin-top: 0.75rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .form-success {
+      display: none;
+      margin-top: 1rem;
+      padding: 0.85rem 1rem;
+      border-radius: 10px;
+      background: rgba(52, 211, 153, 0.12);
+      border: 1px solid rgba(52, 211, 153, 0.3);
+      color: #6ee7b7;
+      font-size: 0.9rem;
+    }
+
+    .form-success.visible {
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.75rem 0 2.5rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      nav a:not(.nav-cta) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <span class="logo-mark">DA</span>
+        <span>Data Analyst Portfolio</span>
+      </a>
+      <nav>
+        <a href="#summary">Summary</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact" class="nav-cta">Get in Touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Open to Data Analyst &amp; Data Scientist roles
+        </div>
+        <h1>Turning data into <span>actionable insights</span></h1>
+        <p>
+          Research analyst with 8 years in banking and finance, now building
+          end-to-end analytics and machine learning solutions — from automated
+          pipelines and dashboards to predictive models and NLP applications.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="https://github.com/cckmwong-data" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub Profile</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary -->
+    <section id="summary">
+      <div class="container">
+        <div class="section-head">
+          <h2>At a Glance</h2>
+          <p>A quick overview of my background, experience, and what I bring to the table.</p>
+        </div>
+        <div class="summary-grid">
+          <div class="summary-card">
+            <div class="icon">🎓</div>
+            <h3>Education</h3>
+            <p>Master's in Financial Analysis, Bachelor's in System Engineering &amp; Engineering Management, and Microsoft Certified Power BI Data Analyst Associate.</p>
+          </div>
+          <div class="summary-card">
+            <div class="icon">💼</div>
+            <h3>Experience</h3>
+            <p>8 years as a research analyst in the banking and financial industry, with deep expertise in financial modelling and data-driven decision making.</p>
+          </div>
+          <div class="summary-card">
+            <div class="icon">🚀</div>
+            <h3>Projects</h3>
+            <p>6 end-to-end projects spanning quantamental investing, customer segmentation, NLP sentiment analysis, credit scoring, and real estate analytics.</p>
+          </div>
+          <div class="summary-card">
+            <div class="icon">🛠️</div>
+            <h3>Core Skills</h3>
+            <p>SQL, Python, Power BI, NLP, R, and financial modelling — applied across cloud pipelines, ML models, and interactive dashboards.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <div class="container">
+        <div class="section-head">
+          <h2>Educational Background</h2>
+          <p>Formal qualifications and professional certifications in engineering, finance, and analytics.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker">🏅</div>
+            <div>
+              <h3>Microsoft Certified: Power BI Data Analyst Associate</h3>
+              <p class="subtitle">Professional Certification</p>
+              <p>Validated expertise in data modelling, DAX, Power Query, and building interactive dashboards for business intelligence.</p>
+              <span class="badge">Certification</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">🎓</div>
+            <div>
+              <h3>Master of Science in Financial Analysis</h3>
+              <p class="subtitle">Hong Kong</p>
+              <p>Advanced training in financial analysis, valuation, and quantitative methods applied to investment and corporate finance.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">🎓</div>
+            <div>
+              <h3>Bachelor in System Engineering and Engineering Management</h3>
+              <p class="subtitle">Hong Kong</p>
+              <p>Foundation in systems thinking, engineering principles, and management — bridging technical and business domains.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-head">
+          <h2>Working Experience</h2>
+          <p>Industry experience grounded in rigorous research and financial analysis.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker">🏦</div>
+            <div>
+              <h3>Research Analyst — Banking &amp; Financial Industry</h3>
+              <p class="subtitle">8 Years</p>
+              <p>
+                Conducted in-depth research and analysis within the banking and financial sector.
+                Developed financial models, evaluated market trends, and delivered data-driven insights
+                to support investment and strategic decisions. Built a strong foundation in quantitative
+                analysis, reporting, and translating complex findings for stakeholders.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <h2>Selected Projects</h2>
+          <p>
+            A portfolio of production-ready analytics and machine learning applications,
+            from automated pipelines to interactive decision-support tools.
+          </p>
+        </div>
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="project-icon">📈</div>
+            <h3>AI-Powered Quantamental Tech Email Alerts</h3>
+            <p>
+              Analyzes US tech stocks through quantitative, fundamental, and technical lenses with daily AI-powered analysis.
+              Investment ratings are calculated via a weighted scoring system. Data refreshes daily after market close,
+              and email alerts are sent when price anomalies or trading signal changes are detected.
+            </p>
+            <div class="project-meta">
+              <span class="meta-pill">Python</span>
+              <span class="meta-pill">AI</span>
+              <span class="meta-pill">Quantamental</span>
+              <span class="meta-pill">Automation</span>
+            </div>
+            <a href="https://github.com/cckmwong-data/tech_email-alerts" target="_blank" rel="noopener noreferrer" class="project-link">
+              View on GitHub →
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-icon">👥</div>
+            <h3>Customer Segmentation &amp; Sales Automated Pipeline</h3>
+            <p>
+              End-to-end customer segmentation workflow: raw data ingestion from Google Sheets, K-Prototypes clustering
+              for mixed numeric and categorical features, data warehousing in Google BigQuery, and daily-refreshed
+              Power BI dashboards — a fully automated, cloud-based, production-ready solution for marketing and sales teams.
+            </p>
+            <div class="project-meta">
+              <span class="meta-pill">Python</span>
+              <span class="meta-pill">BigQuery</span>
+              <span class="meta-pill">Power BI</span>
+              <span class="meta-pill">Clustering</span>
+            </div>
+            <a href="https://github.com/cckmwong-data/customer_segmentation" target="_blank" rel="noopener noreferrer" class="project-link">
+              View on GitHub →
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-icon">💬</div>
+            <h3>LSTM–RoBERTa Sentiment Analyzer</h3>
+            <p>
+              Machine learning models (LSTM and RoBERTa transformer) that classify social media comment sentiment
+              as positive, neutral, or negative. Provides actionable insights to help organizations tailor products,
+              marketing strategies, and customer service to improve user satisfaction.
+            </p>
+            <div class="project-meta">
+              <span class="meta-pill">Python</span>
+              <span class="meta-pill">NLP</span>
+              <span class="meta-pill">LSTM</span>
+              <span class="meta-pill">RoBERTa</span>
+            </div>
+            <a href="https://github.com/cckmwong-data/youtube_sentiment_analysis" target="_blank" rel="noopener noreferrer" class="project-link">
+              View on GitHub →
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-icon">🏦</div>
+            <h3>Loan Approval Prediction App using Logistic Regression</h3>
+            <p>
+              End-to-end loan approval prediction using Logistic Regression to model borrower default risk,
+              with SHAP-based explainability and a Streamlit app for interactive what-if analysis and decision support.
+            </p>
+            <div class="project-meta">
+              <span class="meta-pill">Python</span>
+              <span class="meta-pill">Streamlit</span>
+              <span class="meta-pill">SHAP</span>
+              <span class="meta-pill">Logistic Regression</span>
+            </div>
+            <a href="https://github.com/cckmwong-data/credit_scoring" target="_blank" rel="noopener noreferrer" class="project-link">
+              View on GitHub →
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-icon">📱</div>
+            <h3>Accessible Spam Message Classifier</h3>
+            <p>
+              End-to-end SMS spam detection using NLP and a Support Vector Machine (SVM) model,
+              deployed via Streamlit with text-to-speech output for accessibility — classifying messages as spam or ham (not spam).
+            </p>
+            <div class="project-meta">
+              <span class="meta-pill">Python</span>
+              <span class="meta-pill">NLP</span>
+              <span class="meta-pill">SVM</span>
+              <span class="meta-pill">Streamlit</span>
+            </div>
+            <a href="https://github.com/cckmwong-data/spam_msg_app" target="_blank" rel="noopener noreferrer" class="project-link">
+              View on GitHub →
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-icon">🏠</div>
+            <h3>London Housing: Market &amp; School Catchment Analysis</h3>
+            <p>
+              A comprehensive report for London Real Insights Ltd., a hypothetical real estate agency.
+              Provides management with a full view of property listings across London districts, with filters
+              for price, house features, and schools in the neighborhood.
+            </p>
+            <div class="project-meta">
+              <span class="meta-pill">Power BI</span>
+              <span class="meta-pill">Real Estate</span>
+              <span class="meta-pill">Data Visualization</span>
+            </div>
+            <a href="https://github.com/cckmwong-data/london_housing" target="_blank" rel="noopener noreferrer" class="project-link">
+              View on GitHub →
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-head">
+          <h2>Skills</h2>
+          <p>Technologies and methods I use to build analytics solutions from data to delivery.</p>
+        </div>
+        <div class="skills-wrap">
+          <div class="skills-grid">
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">NLP</span>
+            <span class="skill-tag">R</span>
+            <span class="skill-tag">Financial Modelling</span>
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">Streamlit</span>
+            <span class="skill-tag">Google BigQuery</span>
+            <span class="skill-tag">Data Visualization</span>
+            <span class="skill-tag">ETL Pipelines</span>
+            <span class="skill-tag">Statistical Analysis</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>Get in Touch</h2>
+          <p>
+            Interested in hiring or collaborating? I'd love to hear from you.
+            Reach out for full-time roles, freelance projects, or consulting opportunities.
+          </p>
+        </div>
+        <div class="contact-wrap">
+          <div class="contact-info">
+            <h3>Let's connect</h3>
+            <p>
+              I'm actively looking for data analyst and data scientist opportunities.
+              Feel free to reach out via the form or connect with me directly.
+            </p>
+            <div class="contact-detail">
+              <span>🔗</span>
+              <a href="https://github.com/cckmwong-data" target="_blank" rel="noopener noreferrer">github.com/cckmwong-data</a>
+            </div>
+            <div class="contact-detail">
+              <span>✉</span>
+              <span>your.email@example.com</span>
+            </div>
+            <div class="contact-detail">
+              <span>📍</span>
+              <span>Hong Kong · Open to remote</span>
+            </div>
+            <div class="contact-detail">
+              <span>💼</span>
+              <span>LinkedIn profile (add your link here)</span>
+            </div>
+          </div>
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option value="job">Job opportunity</option>
+                <option value="project">Project inquiry</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell me about the role or project..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <p class="form-note">This is a demo form — replace with a real backend (e.g. Formspree, Netlify Forms) when you deploy.</p>
+            <div class="form-success" id="form-success" role="status">
+              Thank you! Your message has been received. I'll get back to you soon.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Data Analyst Portfolio</span>
+      <span>Built with HTML &amp; CSS</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+
+      document.getElementById('form-success').classList.add('visible');
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
