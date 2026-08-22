@@ -1029,10 +1029,34 @@
           </div>
           <form action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="642766b0-37bc-4be3-a685-3b5edb3fd306">
-            <input type="text" name="name" required>
-            <input type="email" name="email" required>
-            <textarea name="message" required></textarea>
-            <button type="submit">Submit Form</button>
+
+              <!-- Rest of your inputs remain exactly the same -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Subject of the email" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell me about the role or project..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            
+            <!-- You can remove this demo note now that the form works! -->
+            <!-- <p class="form-note">This is a demo form — replace with a real backend (e.g. Formspree, Netlify Forms) when you deploy.</p> -->
+            
+            <div class="form-success" id="form-success" role="status">
+              Thank you! Your message has been received. I'll get back to you soon.
+            </div>
           </form>
         </div>
       </div>
