@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Data Analyst & Data Scientist portfolio — financial research, machine learning, and analytics projects.">
-  <title>Data Analyst Portfolio</title>
+  <title>Carmen Wong · Data Analyst &amp; Data Scientist</title>
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -70,6 +70,12 @@
       gap: 1.5rem;
     }
 
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
     .logo {
       display: flex;
       align-items: center;
@@ -120,6 +126,37 @@
     .nav-cta:hover {
       transform: translateY(-1px);
       box-shadow: 0 8px 24px var(--accent-glow);
+    }
+
+    .nav-social {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .social-link {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      transition: color 0.2s, background 0.2s, border-color 0.2s, transform 0.15s;
+    }
+
+    .social-link:hover {
+      color: var(--text);
+      background: rgba(99, 102, 241, 0.15);
+      border-color: rgba(99, 102, 241, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .social-link svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
     }
 
     /* Hero */
@@ -611,10 +648,23 @@
 
   <header>
     <div class="container header-inner">
-      <a href="#" class="logo">
-        <span class="logo-mark">DA</span>
-        <span>Data Analyst Portfolio</span>
-      </a>
+      <div class="header-brand">
+        <a href="#" class="logo">
+          <span class="logo-mark">CW</span>
+          <span>Carmen Wong</span>
+        </a>
+        <div class="nav-social">
+          <a href="https://www.linkedin.com/in/carmen-wong-data/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.126 0 2.063 2.063 0 01-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://github.com/cckmwong-data" class="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@Carmen-y5i5f" class="social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
       <nav>
         <a href="#summary">Summary</a>
         <a href="#education">Education</a>
@@ -632,13 +682,15 @@
       <div class="container hero-content">
         <div class="eyebrow">
           <span class="eyebrow-dot"></span>
-          Open to Data Analyst &amp; Data Scientist roles
-        </div>
-        <h1>Turning data into <span>actionable insights</span></h1>
+            Data Scientist &amp; Data Analyst
+          </div>
+          <h1>Applied Machine Learning <span> &amp; Financial Analytics</span></h1>
         <p>
-          Research analyst with 8 years in banking and finance, now building
-          end-to-end analytics and machine learning solutions — from automated
-          pipelines and dashboards to predictive models and NLP applications.
+          Financial analyst with 8 years of banking and research expertise, augmented by 
+          modern applied machine learning. Specializing in architecting end-to-end analytical 
+          solutions—from scalable data pipelines and real-time dashboards to predictive models 
+          and Natural Language Processing (NLP) applications. Focused on translating complex financial datasets into cost-optimized, 
+          high-impact strategic intelligence. 
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -652,26 +704,22 @@
       <div class="container">
         <div class="section-head">
           <h2>At a Glance</h2>
-          <p>A quick overview of my background, experience, and what I bring to the table.</p>
+          <!--p>A quick overview of my background, experience, and what I bring to the table.</p-->
         </div>
         <div class="summary-grid">
           <div class="summary-card">
-            <div class="icon">🎓</div>
             <h3>Education</h3>
-            <p>Master's in Financial Analysis, Bachelor's in System Engineering &amp; Engineering Management, and Microsoft Certified Power BI Data Analyst Associate.</p>
+            <p>Master in Financial Analysis, Bachelor in System Engineering &amp; Engineering Management, and Microsoft Certified Power BI Data Analyst Associate.</p>
           </div>
           <div class="summary-card">
-            <div class="icon">💼</div>
             <h3>Experience</h3>
             <p>8 years as a research analyst in the banking and financial industry, with deep expertise in financial modelling and data-driven decision making.</p>
           </div>
           <div class="summary-card">
-            <div class="icon">🚀</div>
             <h3>Projects</h3>
-            <p>6 end-to-end projects spanning quantamental investing, customer segmentation, NLP sentiment analysis, credit scoring, and real estate analytics.</p>
+            <p>End-to-end projects spanning quantamental investing, customer segmentation, NLP sentiment analysis, credit scoring, and real estate analytics.</p>
           </div>
           <div class="summary-card">
-            <div class="icon">🛠️</div>
             <h3>Core Skills</h3>
             <p>SQL, Python, Power BI, NLP, R, and financial modelling — applied across cloud pipelines, ML models, and interactive dashboards.</p>
           </div>
@@ -684,31 +732,37 @@
       <div class="container">
         <div class="section-head">
           <h2>Educational Background</h2>
-          <p>Formal qualifications and professional certifications in engineering, finance, and analytics.</p>
+          <p>Qualifications and professional certifications in engineering, finance, and analytics.</p>
         </div>
         <div class="timeline">
           <div class="timeline-item">
-            <div class="timeline-marker">🏅</div>
-            <div>
-              <h3>Microsoft Certified: Power BI Data Analyst Associate</h3>
-              <p class="subtitle">Professional Certification</p>
-              <p>Validated expertise in data modelling, DAX, Power Query, and building interactive dashboards for business intelligence.</p>
-              <span class="badge">Certification</span>
+              <div class="timeline-marker" style="width: 48px; height: 48px; min-width: 48px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: #252836; border-radius: 10px; padding: 6px; box-sizing: border-box;">
+                <img src="https://raw.githubusercontent.com/cckmwong-data/portfolio/main/images/powerbi.png" alt="Power BI Logo" class="marker-icon" style="width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+              </div>
+              <div>
+                <h3>Microsoft Certified: Power BI Data Analyst Associate</h3>
+                <p>Validated expertise in data modelling, DAX, Power Query, and building interactive dashboards for business intelligence.</p>
+                <span class="badge">Professional Certification</span>
+              </div>
             </div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-marker">🎓</div>
+              <div class="timeline-marker" style="width: 48px; height: 48px; min-width: 48px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: #252836; border-radius: 10px; padding: 6px; box-sizing: border-box;">
+                <img src="https://raw.githubusercontent.com/cckmwong-data/portfolio/main/images/ust.png" alt="HKUST Logo" class="marker-icon" style="width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+              </div>
             <div>
-              <h3>Master of Science in Financial Analysis</h3>
-              <p class="subtitle">Hong Kong</p>
+              <h3>Master of Science in Financial Analysis (2012)</h3>
+              <p class="subtitle">Hong Kong University of Science and Technology (HKUST)</p>
               <p>Advanced training in financial analysis, valuation, and quantitative methods applied to investment and corporate finance.</p>
             </div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-marker">🎓</div>
+              <div class="timeline-marker" style="width: 48px; height: 48px; min-width: 48px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: #252836; border-radius: 10px; padding: 6px; box-sizing: border-box;">
+                <img src="https://raw.githubusercontent.com/cckmwong-data/portfolio/main/images/cuhk.png" alt="CUHK Logo" class="marker-icon" style="width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+              </div>        
             <div>
-              <h3>Bachelor in System Engineering and Engineering Management</h3>
-              <p class="subtitle">Hong Kong</p>
+              <h3>Bachelor in System Engineering and Engineering Management (2004)</h3>
+              <p class="subtitle">The Chinese University of Hong Kong (CUHK)</p>
               <p>Foundation in systems thinking, engineering principles, and management — bridging technical and business domains.</p>
             </div>
           </div>
@@ -725,15 +779,28 @@
         </div>
         <div class="timeline">
           <div class="timeline-item">
-            <div class="timeline-marker">🏦</div>
+            <!--div class="timeline-marker">🏦</div-->
             <div>
-              <h3>Research Analyst — Banking &amp; Financial Industry</h3>
-              <p class="subtitle">8 Years</p>
-              <p>
-                Conducted in-depth research and analysis within the banking and financial sector.
+              <h3>Research Analyst (2008 - 2016)</h3>
+              <p class="subtitle">The Bank of East Asia, Limited, Hong Kong</p>
+              <p class="subtitle">Phillip Securities (HK) Ltd., Hong Kong</p>
+              <p class="subtitle">Tanrich Financial (Management) Limited, Hong Kong</p>
+              <p style="text-align: justify;">
+                Conducted in-depth equity research and analysis in the banking and financial sector.
                 Developed financial models, evaluated market trends, and delivered data-driven insights
                 to support investment and strategic decisions. Built a strong foundation in quantitative
                 analysis, reporting, and translating complex findings for stakeholders.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <!--div class="timeline-marker">🏦</div-->
+            <div>
+              <h3>Business Development Executive (2005 - 2008)</h3>
+              <p class="subtitle">Avery Dennison, Hong Kong</p>
+              <p style="text-align: justify;">
+                Collaborated with the sales team of the UK office and the China production unit for providing 
+                printing labels solutions to customers, such as Marks & Spencer and Tesco.
               </p>
             </div>
           </div>
@@ -747,14 +814,21 @@
         <div class="section-head">
           <h2>Selected Projects</h2>
           <p>
-            A portfolio of production-ready analytics and machine learning applications,
-            from automated pipelines to interactive decision-support tools.
+            A portfolio of production-ready analytics and machine learning applications—spanning automated 
+            pipelines to interactive decision-support tools which are all engineered to run at zero operational cost.
           </p>
         </div>
         <div class="projects-grid">
 
           <article class="project-card">
-            <div class="project-icon">📈</div>
+            <a href="https://github.com/cckmwong-data/tech_email-alerts" target="_blank" rel="noopener noreferrer">
+            <img 
+              src="https://raw.githubusercontent.com/cckmwong-data/tech_email-alerts/main/images/valuation.png" 
+              alt="AI-Powered Quantamental Tech Email Alerts - Valuation Chart" 
+              width="100%" 
+            />
+            </a>
+            
             <h3>AI-Powered Quantamental Tech Email Alerts</h3>
             <p>
               Analyzes US tech stocks through quantitative, fundamental, and technical lenses with daily AI-powered analysis.
@@ -762,10 +836,12 @@
               and email alerts are sent when price anomalies or trading signal changes are detected.
             </p>
             <div class="project-meta">
-              <span class="meta-pill">Python</span>
-              <span class="meta-pill">AI</span>
-              <span class="meta-pill">Quantamental</span>
-              <span class="meta-pill">Automation</span>
+              <span class="meta-pill">AI (Gemini 2.5)</span>
+              <span class="meta-pill">LSTM Autoencoder</span>
+              <span class="meta-pill">DCF Modeling</span>
+              <span class="meta-pill">Power Automate</span>
+              <span class="meta-pill">Power BI</span>
+              <span class="meta-pill">GitHub Action</span>
             </div>
             <a href="https://github.com/cckmwong-data/tech_email-alerts" target="_blank" rel="noopener noreferrer" class="project-link">
               View on GitHub →
@@ -773,18 +849,24 @@
           </article>
 
           <article class="project-card">
-            <div class="project-icon">👥</div>
-            <h3>Customer Segmentation &amp; Sales Automated Pipeline</h3>
+            <a href="https://github.com/cckmwong-data/customer_segmentation" target="_blank" rel="noopener noreferrer">
+              <img 
+                src="https://raw.githubusercontent.com/cckmwong-data/customer_segmentation/main/images/dashboard.png" 
+                alt="Customer Segmentation Dashboard Preview" 
+                style="width: 100%"
+              />
+            </a>
+            <h3>Customer Segmentation &amp; Sales Dashboard</h3>
             <p>
-              End-to-end customer segmentation workflow: raw data ingestion from Google Sheets, K-Prototypes clustering
-              for mixed numeric and categorical features, data warehousing in Google BigQuery, and daily-refreshed
+              End-to-end customer segmentation application from raw data ingestion in Google Sheets, K-Prototypes clustering
+              for mixed numeric and categorical features, data warehousing in Google BigQuery, to daily-refreshed
               Power BI dashboards — a fully automated, cloud-based, production-ready solution for marketing and sales teams.
             </p>
             <div class="project-meta">
-              <span class="meta-pill">Python</span>
+              <span class="meta-pill">K-Prototypes</span>
               <span class="meta-pill">BigQuery</span>
+              <span class="meta-pill">GitHub Action</span>
               <span class="meta-pill">Power BI</span>
-              <span class="meta-pill">Clustering</span>
             </div>
             <a href="https://github.com/cckmwong-data/customer_segmentation" target="_blank" rel="noopener noreferrer" class="project-link">
               View on GitHub →
@@ -792,18 +874,24 @@
           </article>
 
           <article class="project-card">
-            <div class="project-icon">💬</div>
+            <a href="https://github.com/cckmwong-data/youtube_sentiment_analysis" target="_blank" rel="noopener noreferrer">
+              <img 
+                src="https://raw.githubusercontent.com/cckmwong-data/youtube_sentiment_analysis/main/images/front.png" 
+                alt="YouTube Sentiment Analysis Project Preview" 
+                style="width: 100%" 
+              />
+            </a>
             <h3>LSTM–RoBERTa Sentiment Analyzer</h3>
             <p>
-              Machine learning models (LSTM and RoBERTa transformer) that classify social media comment sentiment
+              Developed machine learning pipelines - Long Short-Term Memory (LSTM) and RoBERTa transformer classify YouTube comment sentiment
               as positive, neutral, or negative. Provides actionable insights to help organizations tailor products,
               marketing strategies, and customer service to improve user satisfaction.
             </p>
             <div class="project-meta">
-              <span class="meta-pill">Python</span>
-              <span class="meta-pill">NLP</span>
-              <span class="meta-pill">LSTM</span>
+              <span class="meta-pill">Natural Language Processing</span>
+              <span class="meta-pill">LSTM Model</span>
               <span class="meta-pill">RoBERTa</span>
+              <span class="meta-pill">Hugging Face</span>
             </div>
             <a href="https://github.com/cckmwong-data/youtube_sentiment_analysis" target="_blank" rel="noopener noreferrer" class="project-link">
               View on GitHub →
@@ -811,17 +899,23 @@
           </article>
 
           <article class="project-card">
-            <div class="project-icon">🏦</div>
-            <h3>Loan Approval Prediction App using Logistic Regression</h3>
+            <a href="https://github.com/cckmwong-data/credit_scoring" target="_blank" rel="noopener noreferrer">
+              <img 
+                src="https://raw.githubusercontent.com/cckmwong-data/credit_scoring/main/images/app1.png" 
+                alt="Credit Scoring Project Preview" 
+                style="width: 100%; height: 200px; object-fit: contain;" 
+              />
+            </a>
+            <h3>Loan Approval Prediction Application</h3>
             <p>
-              End-to-end loan approval prediction using Logistic Regression to model borrower default risk,
+              Approval prediction using Logistic Regression to model borrower default risk,
               with SHAP-based explainability and a Streamlit app for interactive what-if analysis and decision support.
             </p>
             <div class="project-meta">
-              <span class="meta-pill">Python</span>
-              <span class="meta-pill">Streamlit</span>
-              <span class="meta-pill">SHAP</span>
+              <span class="meta-pill">Credit Analysis</span>
               <span class="meta-pill">Logistic Regression</span>
+              <span class="meta-pill">SHAP explainability</span>
+              <span class="meta-pill">Streamlit</span>
             </div>
             <a href="https://github.com/cckmwong-data/credit_scoring" target="_blank" rel="noopener noreferrer" class="project-link">
               View on GitHub →
@@ -829,16 +923,21 @@
           </article>
 
           <article class="project-card">
-            <div class="project-icon">📱</div>
+            <a href="https://github.com/cckmwong-data/spam_msg_app" target="_blank" rel="noopener noreferrer">
+              <img 
+                src="https://raw.githubusercontent.com/cckmwong-data/spam_msg_app/main/images/app.png" 
+                alt="Spam Message Classifier Project Preview" 
+                style="width: 100%; height: 200px; object-fit: contain;" 
+              />
+            </a>
             <h3>Accessible Spam Message Classifier</h3>
             <p>
-              End-to-end SMS spam detection using NLP and a Support Vector Machine (SVM) model,
+              SMS spam detection using NLP and a Support Vector Machine (SVM) model,
               deployed via Streamlit with text-to-speech output for accessibility — classifying messages as spam or ham (not spam).
             </p>
             <div class="project-meta">
-              <span class="meta-pill">Python</span>
-              <span class="meta-pill">NLP</span>
-              <span class="meta-pill">SVM</span>
+              <span class="meta-pill">Natural Language Processing</span>
+              <span class="meta-pill">Support Vector Machine</span>
               <span class="meta-pill">Streamlit</span>
             </div>
             <a href="https://github.com/cckmwong-data/spam_msg_app" target="_blank" rel="noopener noreferrer" class="project-link">
@@ -847,7 +946,13 @@
           </article>
 
           <article class="project-card">
-            <div class="project-icon">🏠</div>
+            <a href="https://github.com/cckmwong-data/london_housing" target="_blank" rel="noopener noreferrer">
+              <img 
+                src="https://raw.githubusercontent.com/cckmwong-data/london_housing/main/images/cover.png" 
+                alt="London Housing Project Preview" 
+                style="width: 100%; height: 200px; object-fit: contain;" 
+              />
+            </a>
             <h3>London Housing: Market &amp; School Catchment Analysis</h3>
             <p>
               A comprehensive report for London Real Insights Ltd., a hypothetical real estate agency.
@@ -856,8 +961,8 @@
             </p>
             <div class="project-meta">
               <span class="meta-pill">Power BI</span>
-              <span class="meta-pill">Real Estate</span>
               <span class="meta-pill">Data Visualization</span>
+              <span class="meta-pill">Real Estate</span>
             </div>
             <a href="https://github.com/cckmwong-data/london_housing" target="_blank" rel="noopener noreferrer" class="project-link">
               View on GitHub →
@@ -873,7 +978,7 @@
       <div class="container">
         <div class="section-head">
           <h2>Skills</h2>
-          <p>Technologies and methods I use to build analytics solutions from data to delivery.</p>
+          <!--p>Technologies and methods I use to build analytics solutions from data to delivery.</p-->
         </div>
         <div class="skills-wrap">
           <div class="skills-grid">
@@ -884,8 +989,6 @@
             <span class="skill-tag">R</span>
             <span class="skill-tag">Financial Modelling</span>
             <span class="skill-tag">Machine Learning</span>
-            <span class="skill-tag">Streamlit</span>
-            <span class="skill-tag">Google BigQuery</span>
             <span class="skill-tag">Data Visualization</span>
             <span class="skill-tag">ETL Pipelines</span>
             <span class="skill-tag">Statistical Analysis</span>
@@ -900,35 +1003,31 @@
         <div class="section-head">
           <h2>Get in Touch</h2>
           <p>
-            Interested in hiring or collaborating? I'd love to hear from you.
-            Reach out for full-time roles, freelance projects, or consulting opportunities.
+            I'd love to hear from you.
+            Feel free to reach out for full-time roles, freelance projects, as well as volunteer opportunities!
           </p>
         </div>
         <div class="contact-wrap">
           <div class="contact-info">
             <h3>Let's connect</h3>
-            <p>
-              I'm actively looking for data analyst and data scientist opportunities.
-              Feel free to reach out via the form or connect with me directly.
-            </p>
             <div class="contact-detail">
               <span>🔗</span>
               <a href="https://github.com/cckmwong-data" target="_blank" rel="noopener noreferrer">github.com/cckmwong-data</a>
             </div>
             <div class="contact-detail">
               <span>✉</span>
-              <span>your.email@example.com</span>
+              <span>cc.kmwong@gmail.com</span>
             </div>
             <div class="contact-detail">
               <span>📍</span>
-              <span>Hong Kong · Open to remote</span>
+              <span>London · Open to remote</span>
             </div>
             <div class="contact-detail">
               <span>💼</span>
               <span>LinkedIn profile (add your link here)</span>
             </div>
           </div>
-          <form id="contact-form" novalidate>
+          <form id="contact-form" action="https://formsubmit.co/cc.kmwong@gmail.com" method="POST" novalidate>
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Name</label>
@@ -941,18 +1040,18 @@
             </div>
             <div class="form-group">
               <label for="subject">Subject</label>
-              <select id="subject" name="subject">
-                <option value="job">Job opportunity</option>
-                <option value="project">Project inquiry</option>
-                <option value="other">Other</option>
-              </select>
+              <!-- FormSubmit automatically uses any input named "subject" as the actual email subject -->
+              <input type="text" id="subject" name="subject" placeholder="Subject of the email" required>
             </div>
             <div class="form-group">
               <label for="message">Message</label>
               <textarea id="message" name="message" placeholder="Tell me about the role or project..." required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Send Message</button>
-            <p class="form-note">This is a demo form — replace with a real backend (e.g. Formspree, Netlify Forms) when you deploy.</p>
+            
+            <!-- You can remove this demo note now that the form works! -->
+            <!-- <p class="form-note">This is a demo form — replace with a real backend (e.g. Formspree, Netlify Forms) when you deploy.</p> -->
+            
             <div class="form-success" id="form-success" role="status">
               Thank you! Your message has been received. I'll get back to you soon.
             </div>
@@ -964,8 +1063,7 @@
 
   <footer>
     <div class="container footer-inner">
-      <span>© 2026 Data Analyst Portfolio</span>
-      <span>Built with HTML &amp; CSS</span>
+      <span>© 2026 Carmen Wong</span>
     </div>
   </footer>
 
@@ -974,9 +1072,10 @@
       e.preventDefault();
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
       const message = document.getElementById('message').value.trim();
 
-      if (!name || !email || !message) {
+      if (!name || !email || !subject || !message) {
         alert('Please fill in all required fields.');
         return;
       }
