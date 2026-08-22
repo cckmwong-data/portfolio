@@ -1027,18 +1027,13 @@
               <span>LinkedIn profile (add your link here)</span>
             </div>
           </div>
-            <form action="https://formsubmit.co/el/xotuge" method="POST">
-              <label for="name">Name:</label>
-              <input type="text" id="name" name="name" required>
-
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required>
-
-              <label for="message">Message:</label>
-              <textarea id="message" name="message" rows="4"></textarea>
-
-              <button type="submit">Submit</button>
-            </form>
+          <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="642766b0-37bc-4be3-a685-3b5edb3fd306">
+            <input type="text" name="name" required>
+            <input type="email" name="email" required>
+            <textarea name="message" required></textarea>
+            <button type="submit">Submit</button>
+          </form>
         </div>
       </div>
     </section>
