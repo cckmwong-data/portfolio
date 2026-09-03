@@ -158,14 +158,7 @@
       height: 18px;
       fill: currentColor;
     }
-
-    /* Hero */
-    .hero {
-      padding: calc(var(--header-h) + 4rem) 0 3rem;
-      position: relative;
-      overflow: hidden;
-    }
-
+    
     .hero::before {
       content: "";
       position: absolute;
@@ -270,6 +263,7 @@
     }
 
     .section-head {
+      width: 100%;
       margin-bottom: 2.25rem;
     }
 
@@ -280,8 +274,8 @@
     }
 
     .section-head p {
+      width: 100%;
       color: var(--muted);
-      max-width: 600px;
     }
 
     /* Summary */
@@ -311,6 +305,25 @@
     .summary-card p {
       color: var(--muted);
       font-size: 0.92rem;
+    }
+
+    .custom-list {
+      list-style: none;
+      display: grid;
+      gap: 0.55rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .custom-list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+    }
+
+    .custom-list-item .eyebrow-dot {
+      margin-top: 0.55rem;
+      flex-shrink: 0;
     }
 
     /* Timeline / Education & Experience */
@@ -465,12 +478,61 @@
     }
 
     .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .skill-meter {
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .skill-meter-head {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem;
+      justify-content: space-between;
+      gap: 1rem;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .skill-level {
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+
+    .skill-meter-track {
+      height: 0.55rem;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .skill-meter-fill {
+      width: var(--skill-level);
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+
+    @media (max-width: 900px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .skill-tag {
+      justify-self: start;
+      width: fit-content;
+      max-width: 100%;
       padding: 0.55rem 1.1rem;
       border-radius: 999px;
       background: rgba(99, 102, 241, 0.12);
@@ -478,12 +540,24 @@
       color: #c7d2fe;
       font-size: 0.9rem;
       font-weight: 600;
+      overflow-wrap: anywhere;
       transition: background 0.2s, transform 0.15s;
     }
 
     .skill-tag:hover {
       background: rgba(99, 102, 241, 0.22);
       transform: translateY(-2px);
+    }
+
+    .skill-tags-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 0.65rem;
+    }
+
+    .other-skills {
+      margin-top: 1.25rem;
     }
 
     /* Contact */
@@ -654,7 +728,7 @@
           <span>Carmen Wong</span>
         </a>
         <div class="nav-social">
-          <a href="https://www.linkedin.com/in/carmen-wong-data/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/carmen-wong-59a354432" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.126 0 2.063 2.063 0 01-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           </a>
           <a href="https://github.com/cckmwong-data" class="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
@@ -667,10 +741,10 @@
       </div>
       <nav>
         <a href="#summary">Summary</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
         <a href="#contact" class="nav-cta">Get in Touch</a>
       </nav>
     </div>
@@ -682,15 +756,13 @@
       <div class="container hero-content">
         <div class="eyebrow">
           <span class="eyebrow-dot"></span>
-            Data Scientist &amp; Data Analyst
+            Data Scientist | Data Analyst | Financial Analyst 
           </div>
-          <h1>Applied Machine Learning <span> &amp; Financial Analytics</span></h1>
+          <h1>HELLO <span> I'm Carmen Wong</span></h1>
         <p>
-          Financial analyst with 8 years of banking and research expertise, augmented by 
-          modern applied machine learning. Specializing in architecting end-to-end analytical 
-          solutions—from scalable data pipelines and real-time dashboards to predictive models 
-          and Natural Language Processing (NLP) applications. Focused on translating complex financial datasets into cost-optimized, 
-          high-impact strategic intelligence. 
+        Blending 8 years of financial research expertise with hands-on machine learning (ML), I specialize in end-to-end 
+        automated analytics systems—including scalable data pipelines, real-time dashboards, predictive models, and Natural Language 
+        Processing (NLP) tools, which turn complex datasets into clear, cost-effective strategic insights.
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -704,105 +776,49 @@
       <div class="container">
         <div class="section-head">
           <h2>At a Glance</h2>
-          <!--p>A quick overview of my background, experience, and what I bring to the table.</p-->
         </div>
         <div class="summary-grid">
+
           <div class="summary-card">
-            <h3>Education</h3>
-            <p>Master in Financial Analysis, Bachelor in System Engineering &amp; Engineering Management, and Microsoft Certified Power BI Data Analyst Associate.</p>
+            <h3>Education & Certs</h3>
+            <ul class="custom-list">
+              <li class="custom-list-item"><span class="eyebrow-dot"></span><span><strong>Microsoft Certified: Power BI Data Analyst Associate</strong></span></li>
+              <li class="custom-list-item"><span class="eyebrow-dot"></span><span>MSc Financial Analysis</span></li>
+              <li class="custom-list-item"><span class="eyebrow-dot"></span><span>BSc Systems Engineering</span></li>
+
+            </ul>
           </div>
+
           <div class="summary-card">
             <h3>Experience</h3>
-            <p>8 years as a research analyst in the banking and financial industry, with deep expertise in financial modelling and data-driven decision making.</p>
+            <ul class="custom-list">
+              <li class="custom-list-item"><span class="eyebrow-dot"></span><span>Research Analyst</span></li>
+              <li class="custom-list-item"><span class="eyebrow-dot"></span><span>Data Analysis & Reporting</span></li>
+              <li class="custom-list-item"><span class="eyebrow-dot"></span><span>Data Visualization</span></li>
+              <li class="custom-list-item"><span class="eyebrow-dot"></span><span>Financial Modelling &amp; Valuation</span></li>
+            </ul>
           </div>
-          <div class="summary-card">
-            <h3>Projects</h3>
-            <p>End-to-end projects spanning quantamental investing, customer segmentation, NLP sentiment analysis, credit scoring, and real estate analytics.</p>
-          </div>
-          <div class="summary-card">
-            <h3>Core Skills</h3>
-            <p>SQL, Python, Power BI, NLP, R, and financial modelling — applied across cloud pipelines, ML models, and interactive dashboards.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Education -->
-    <section id="education">
-      <div class="container">
-        <div class="section-head">
-          <h2>Educational Background</h2>
-          <p>Qualifications and professional certifications in engineering, finance, and analytics.</p>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-              <div class="timeline-marker" style="width: 48px; height: 48px; min-width: 48px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: #252836; border-radius: 10px; padding: 6px; box-sizing: border-box;">
-                <img src="https://raw.githubusercontent.com/cckmwong-data/portfolio/main/images/powerbi.png" alt="Power BI Logo" class="marker-icon" style="width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
-              </div>
-              <div>
-                <h3>Microsoft Certified: Power BI Data Analyst Associate</h3>
-                <p>Validated expertise in data modelling, DAX, Power Query, and building interactive dashboards for business intelligence.</p>
-                <span class="badge">Professional Certification</span>
-              </div>
-            </div>
+          <div class="summary-card">
+            <h3>Project Domains</h3>
+            <ul class="custom-list">
+              <li class="custom-list-item"><span class="eyebrow-dot"></span><span>Equity Analysis</span></li>
+              <li class="custom-list-item"><span class="eyebrow-dot"></span><span>Credit Risk Assessment</span></li>
+              <li class="custom-list-item"><span class="eyebrow-dot"></span><span>NLP Sentiment</span></li>
+              <li class="custom-list-item"><span class="eyebrow-dot"></span><span>Accessible Application</span></li>
+              <li class="custom-list-item"><span class="eyebrow-dot"></span><span>Customer Analytics</span></li>
+              <li class="custom-list-item"><span class="eyebrow-dot"></span><span>Real Estate Analytics</span></li>
+            </ul>
           </div>
-          <div class="timeline-item">
-              <div class="timeline-marker" style="width: 48px; height: 48px; min-width: 48px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: #252836; border-radius: 10px; padding: 6px; box-sizing: border-box;">
-                <img src="https://raw.githubusercontent.com/cckmwong-data/portfolio/main/images/ust.png" alt="HKUST Logo" class="marker-icon" style="width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
-              </div>
-            <div>
-              <h3>Master of Science in Financial Analysis (2012)</h3>
-              <p class="subtitle">Hong Kong University of Science and Technology (HKUST)</p>
-              <p>Advanced training in financial analysis, valuation, and quantitative methods applied to investment and corporate finance.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-              <div class="timeline-marker" style="width: 48px; height: 48px; min-width: 48px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: #252836; border-radius: 10px; padding: 6px; box-sizing: border-box;">
-                <img src="https://raw.githubusercontent.com/cckmwong-data/portfolio/main/images/cuhk.png" alt="CUHK Logo" class="marker-icon" style="width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
-              </div>        
-            <div>
-              <h3>Bachelor in System Engineering and Engineering Management (2004)</h3>
-              <p class="subtitle">The Chinese University of Hong Kong (CUHK)</p>
-              <p>Foundation in systems thinking, engineering principles, and management — bridging technical and business domains.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Experience -->
-    <section id="experience">
-      <div class="container">
-        <div class="section-head">
-          <h2>Working Experience</h2>
-          <p>Industry experience grounded in rigorous research and financial analysis.</p>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <!--div class="timeline-marker">🏦</div-->
-            <div>
-              <h3>Research Analyst (2008 - 2016)</h3>
-              <p class="subtitle">The Bank of East Asia, Limited, Hong Kong</p>
-              <p class="subtitle">Phillip Securities (HK) Ltd., Hong Kong</p>
-              <p class="subtitle">Tanrich Financial (Management) Limited, Hong Kong</p>
-              <p style="text-align: justify;">
-                Conducted in-depth equity research and analysis in the banking and financial sector.
-                Developed financial models, evaluated market trends, and delivered data-driven insights
-                to support investment and strategic decisions. Built a strong foundation in quantitative
-                analysis, reporting, and translating complex findings for stakeholders.
-              </p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <!--div class="timeline-marker">🏦</div-->
-            <div>
-              <h3>Business Development Executive (2005 - 2008)</h3>
-              <p class="subtitle">Avery Dennison, Hong Kong</p>
-              <p style="text-align: justify;">
-                Collaborated with the sales team of the UK office and the China production unit for providing 
-                printing labels solutions to customers, such as Marks & Spencer and Tesco.
-              </p>
-            </div>
+          <div class="summary-card">
+            <h3>Technical Stack</h3>
+            <ul class="custom-list">
+              <li class="custom-list-item"><span class="eyebrow-dot"></span><span><strong>Python, SQL, Power BI, Excel</strong></li>
+              <li class="custom-list-item"><span class="eyebrow-dot"></span><span><strong>ML &amp; NLP:</strong> Scikit-Learn, TensorFlow, SHAP</li>
+              <li class="custom-list-item"><span class="eyebrow-dot"></span><span><strong>Deployment &amp; Cloud:</strong> BigQuery, Hugging Face, Streamlit, GitHub Actions</li>
+              <li class="custom-list-item"><span class="eyebrow-dot"></span><span><strong>Financial Analysis:</strong> YFinance, TA-Lib</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -812,16 +828,17 @@
     <section id="projects">
       <div class="container">
         <div class="section-head">
-          <h2>Selected Projects</h2>
+          <h2>Featured Projects</h2>
           <p>
-            A portfolio of production-ready analytics and machine learning applications—spanning automated 
-            pipelines to interactive decision-support tools which are all engineered to run at zero operational cost.
+            Production-ready analytics and machine learning applications—spanning automated 
+            pipelines to interactive decision-support tools. <br>
+            <I>Since the applications run at zero cost, some of them are in sleep mode after a period of inactivity. Please press "Yes, get this app back up!" or "Restart this Space" to wake them up.</I>
           </p>
         </div>
         <div class="projects-grid">
 
           <article class="project-card">
-            <a href="https://github.com/cckmwong-data/tech_email-alerts" target="_blank" rel="noopener noreferrer">
+            <a href="https://app.powerbi.com/view?r=eyJrIjoiMzMyMDQ5ZjItM2ZkYi00MGYxLTliYzYtYjBkOTE4ZmE5ZGUyIiwidCI6IjZjMWQ0MTUyLTM5ZDAtNDRjYS04OGQ5LWI4ZDZkZGNhMDcwOCIsImMiOjEwfQ%3D%3D" target="_blank" rel="noopener noreferrer">
             <img 
               src="https://raw.githubusercontent.com/cckmwong-data/tech_email-alerts/main/images/valuation.png" 
               alt="AI-Powered Quantamental Tech Email Alerts - Valuation Chart" 
@@ -829,7 +846,7 @@
             />
             </a>
             
-            <h3>AI-Powered Quantamental Tech Email Alerts</h3>
+            <h3>OmniQuant Tech Analytics</h3>
             <p>
               Analyzes US tech stocks through quantitative, fundamental, and technical lenses with daily AI-powered analysis.
               Investment ratings are calculated via a weighted scoring system. Data refreshes daily after market close,
@@ -849,14 +866,14 @@
           </article>
 
           <article class="project-card">
-            <a href="https://github.com/cckmwong-data/customer_segmentation" target="_blank" rel="noopener noreferrer">
+            <a href="https://app.powerbi.com/view?r=eyJrIjoiZjIyM2I2ZWYtMWNlMC00ZGVmLTkwMzQtMmVkZjcwNWU4MmQwIiwidCI6IjZjMWQ0MTUyLTM5ZDAtNDRjYS04OGQ5LWI4ZDZkZGNhMDcwOCIsImMiOjEwfQ%3D%3D" target="_blank" rel="noopener noreferrer">
               <img 
                 src="https://raw.githubusercontent.com/cckmwong-data/customer_segmentation/main/images/dashboard.png" 
                 alt="Customer Segmentation Dashboard Preview" 
                 style="width: 100%"
               />
             </a>
-            <h3>Customer Segmentation &amp; Sales Dashboard</h3>
+            <h3>Customer Segmentation & Sales Intelligence</h3>
             <p>
               End-to-end customer segmentation application from raw data ingestion in Google Sheets, K-Prototypes clustering
               for mixed numeric and categorical features, data warehousing in Google BigQuery, to daily-refreshed
@@ -874,7 +891,7 @@
           </article>
 
           <article class="project-card">
-            <a href="https://github.com/cckmwong-data/youtube_sentiment_analysis" target="_blank" rel="noopener noreferrer">
+            <a href="https://huggingface.co/spaces/cckmwong/youtube_sentiment_demo" target="_blank" rel="noopener noreferrer">
               <img 
                 src="https://raw.githubusercontent.com/cckmwong-data/youtube_sentiment_analysis/main/images/front.png" 
                 alt="YouTube Sentiment Analysis Project Preview" 
@@ -896,17 +913,20 @@
             <a href="https://github.com/cckmwong-data/youtube_sentiment_analysis" target="_blank" rel="noopener noreferrer" class="project-link">
               View on GitHub →
             </a>
+            <a href="https://youtu.be/WGJ-9vRK5KQ?si=sDdiaYjUxQMlqA8T" target="_blank" rel="noopener noreferrer" class="project-link">
+              View on YouTube →
+            </a>
           </article>
 
           <article class="project-card">
-            <a href="https://github.com/cckmwong-data/credit_scoring" target="_blank" rel="noopener noreferrer">
+            <a href="https://creditscoringprediction2.streamlit.app/" target="_blank" rel="noopener noreferrer">
               <img 
                 src="https://raw.githubusercontent.com/cckmwong-data/credit_scoring/main/images/app1.png" 
                 alt="Credit Scoring Project Preview" 
                 style="width: 100%; height: 200px; object-fit: contain;" 
               />
             </a>
-            <h3>Loan Approval Prediction Application</h3>
+            <h3>Loan Approval Prediction App</h3>
             <p>
               Approval prediction using Logistic Regression to model borrower default risk,
               with SHAP-based explainability and a Streamlit app for interactive what-if analysis and decision support.
@@ -920,10 +940,13 @@
             <a href="https://github.com/cckmwong-data/credit_scoring" target="_blank" rel="noopener noreferrer" class="project-link">
               View on GitHub →
             </a>
+            <a href="https://youtu.be/psohqe_YtE4?si=viyEfiA93SIYeE3C" target="_blank" rel="noopener noreferrer" class="project-link">
+              View on YouTube →
+            </a>
           </article>
 
           <article class="project-card">
-            <a href="https://github.com/cckmwong-data/spam_msg_app" target="_blank" rel="noopener noreferrer">
+            <a href="https://spammsgcheck.streamlit.app/" target="_blank" rel="noopener noreferrer">
               <img 
                 src="https://raw.githubusercontent.com/cckmwong-data/spam_msg_app/main/images/app.png" 
                 alt="Spam Message Classifier Project Preview" 
@@ -943,10 +966,13 @@
             <a href="https://github.com/cckmwong-data/spam_msg_app" target="_blank" rel="noopener noreferrer" class="project-link">
               View on GitHub →
             </a>
+            <a href="https://youtu.be/EwgdOBuiui4?si=T0FidK6XrGLVaQKh" target="_blank" rel="noopener noreferrer" class="project-link">
+              View on YouTube →
+            </a>
           </article>
 
           <article class="project-card">
-            <a href="https://github.com/cckmwong-data/london_housing" target="_blank" rel="noopener noreferrer">
+            <a href="https://app.powerbi.com/view?r=eyJrIjoiOGUyZDFlZjctMGY4Ni00OGY5LWFlMDUtYWFmYmNjZWUzZDYxIiwidCI6IjZjMWQ0MTUyLTM5ZDAtNDRjYS04OGQ5LWI4ZDZkZGNhMDcwOCIsImMiOjEwfQ%3D%3D" target="_blank" rel="noopener noreferrer">
               <img 
                 src="https://raw.githubusercontent.com/cckmwong-data/london_housing/main/images/cover.png" 
                 alt="London Housing Project Preview" 
@@ -973,25 +999,160 @@
       </div>
     </section>
 
+
     <!-- Skills -->
-    <section id="skills">
+  <section id="skills">
+    <div class="container">
+      <div class="section-head">
+        <h2>Skills</h2>
+        <p>Technologies and tools used to build analytics solutions from data to delivery.</p>
+      </div>
+      <div class="skills-wrap">
+        <div class="skills-grid">
+          <div class="skill-meter">
+            <div class="skill-meter-head"><span>Python</span><span class="skill-level">Advanced</span></div>
+            <div class="skill-meter-track" role="progressbar" aria-label="Python proficiency" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"><div class="skill-meter-fill" style="--skill-level: 90%;"></div></div>
+          </div>
+          <div class="skill-meter">
+            <div class="skill-meter-head"><span>SQL</span><span class="skill-level">Advanced</span></div>
+            <div class="skill-meter-track" role="progressbar" aria-label="SQL proficiency" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"><div class="skill-meter-fill" style="--skill-level: 85%;"></div></div>
+          </div>
+          <div class="skill-meter">
+            <div class="skill-meter-head"><span>Power BI</span><span class="skill-level">Advanced</span></div>
+            <div class="skill-meter-track" role="progressbar" aria-label="Power BI proficiency" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"><div class="skill-meter-fill" style="--skill-level: 95%;"></div></div>
+          </div>
+          <div class="skill-meter">
+            <div class="skill-meter-head"><span>Excel</span><span class="skill-level">Advanced</span></div>
+            <div class="skill-meter-track" role="progressbar" aria-label="Excel proficiency" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"><div class="skill-meter-fill" style="--skill-level: 90%;"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="container other-skills">
+      <div class="skills-wrap">
+        <div class="skill-tags-grid">
+          <span class="skill-tag">R</span>
+          <span class="skill-tag">NLP</span>
+          <span class="skill-tag">Machine Learning</span>
+          <span class="skill-tag">Data Engineering</span>
+          <span class="skill-tag">Automation & Cloud Engineering</span>
+          <span class="skill-tag">Statistical Analysis</span>
+          <span class="skill-tag">Financial Modelling</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Education -->
+    <section id="education">
       <div class="container">
         <div class="section-head">
-          <h2>Skills</h2>
-          <!--p>Technologies and methods I use to build analytics solutions from data to delivery.</p-->
+          <h2>Educational Background</h2>
+          <p>Qualifications and professional certifications in engineering, finance, and analytics, in addition to a number of courses 
+            in data science including machine learning models and advanced algorithm development.
+          </p>
         </div>
-        <div class="skills-wrap">
-          <div class="skills-grid">
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Power BI</span>
-            <span class="skill-tag">NLP</span>
-            <span class="skill-tag">R</span>
-            <span class="skill-tag">Financial Modelling</span>
-            <span class="skill-tag">Machine Learning</span>
-            <span class="skill-tag">Data Visualization</span>
-            <span class="skill-tag">ETL Pipelines</span>
-            <span class="skill-tag">Statistical Analysis</span>
+        <div class="timeline">
+          <div class="timeline-item">
+              <div class="timeline-marker" style="width: 48px; height: 48px; min-width: 48px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: #252836; border-radius: 10px; padding: 6px; box-sizing: border-box;">
+                <img src="https://raw.githubusercontent.com/cckmwong-data/portfolio/main/images/powerbi.png" alt="Power BI Logo" class="marker-icon" style="width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+              </div>
+              <div>
+                <h3>Microsoft Certified: Power BI Data Analyst Associate</h3>
+                <p>Validated expertise in data modelling, DAX, Power Query, and building interactive dashboards for business intelligence.</p>
+                <span class="badge">Professional Certification</span>
+              </div>
+            </div>
+          <div class="timeline-item">
+              <div class="timeline-marker" style="width: 48px; height: 48px; min-width: 48px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: #252836; border-radius: 10px; padding: 6px; box-sizing: border-box;">
+                <img src="https://raw.githubusercontent.com/cckmwong-data/portfolio/main/images/GoogleCloud.png" alt="HKUST Logo" class="marker-icon" style="width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+              </div>
+            <div>
+              <h3>Google Cloud: Gemini in BigQuery</h3>
+              <p class="subtitle">Coursera</p>
+              <p>Using Gemini in BigQuery to generate and debug SQL, conduct sentiment analysis, summarize text and identify keywords, generate
+                embeddings, create a Retrieval Augmented Generation (RAG) pipeline, and implement multimodal vector search.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker" style="width: 48px; height: 48px; min-width: 48px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: #252836; border-radius: 10px; padding: 6px; box-sizing: border-box;">
+              <img src="https://raw.githubusercontent.com/cckmwong-data/portfolio/main/images/udemy.png" alt="HKUST Logo" class="marker-icon" style="width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+              </div>
+            <div>
+              <h3>Python & Machine Learning for Financial Analysis</h3>
+              <h3>Algorithmic Trading & Time Series Analysis in Python and R</h3>
+              <p class="subtitle">Udemy</p>
+              <p>Briding courses to enhance skills in financial analysis and investment using data science and machine learning.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker" style="width: 48px; height: 48px; min-width: 48px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: #252836; border-radius: 10px; padding: 6px; box-sizing: border-box;">
+              <img src="https://raw.githubusercontent.com/cckmwong-data/portfolio/main/images/IBM.png" alt="HKUST Logo" class="marker-icon" style="width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+              </div>
+            <div>
+              <h3>IBM: Analyzing Data with Python</h3>
+              <h3>IBM: SQL for Data Science</h3>
+              <p class="subtitle">edX</p>
+              <p>Hands-on data analysis using Python and SQL.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+              <div class="timeline-marker" style="width: 48px; height: 48px; min-width: 48px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: #252836; border-radius: 10px; padding: 6px; box-sizing: border-box;">
+                <img src="https://raw.githubusercontent.com/cckmwong-data/portfolio/main/images/ust.png" alt="HKUST Logo" class="marker-icon" style="width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+              </div>
+            <div>
+              <h3>Master of Science in Financial Analysis (2012)</h3>
+              <p class="subtitle">Hong Kong University of Science and Technology (HKUST)</p>
+              <p>Advanced training in financial analysis, valuation, and quantitative methods applied to investment and corporate finance.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+              <div class="timeline-marker" style="width: 48px; height: 48px; min-width: 48px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: #252836; border-radius: 10px; padding: 6px; box-sizing: border-box;">
+                <img src="https://raw.githubusercontent.com/cckmwong-data/portfolio/main/images/cuhk.png" alt="CUHK Logo" class="marker-icon" style="width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+              </div>        
+            <div>
+              <h3>Bachelor in System Engineering and Engineering Management (2004)</h3>
+              <p class="subtitle">The Chinese University of Hong Kong (CUHK)</p>
+              <p>Combining quantitative modeling, operations research, and system optimization with tech-driven management strategies.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-head">
+          <h2>Working Experience</h2>
+          <p>Industry experience grounded in quantitative analysis and financial modeling.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <!--div class="timeline-marker">🏦</div-->
+            <div>
+              <h3>Research Analyst (2008 - 2016)</h3>
+              <p class="subtitle">The Bank of East Asia, Limited, Hong Kong</p>
+              <p class="subtitle">Phillip Securities (HK) Ltd., Hong Kong</p>
+              <p class="subtitle">Tanrich Financial (Management) Limited, Hong Kong</p>
+              <p style="text-align: justify;">
+                Conducted in-depth equity research and analysis in the banking and financial sector.
+                Developed financial models, evaluated market trends, and delivered data-driven insights
+                to support investment and strategic decisions. Built a strong foundation in quantitative
+                analysis, reporting, and translating complex findings for stakeholders.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div>
+              <h3>Business Development Executive (2005 - 2008)</h3>
+              <p class="subtitle">Avery Dennison, Hong Kong</p>
+              <p style="text-align: justify;">
+                Collaborated with the sales team of the UK office and the China production unit for providing 
+                printing labels solutions to major retail and supermarket chains in the UK.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -1016,15 +1177,17 @@
             </div>
             <div class="contact-detail">
               <span>✉</span>
+              <a href="mailto:cc.kmwong@gmail.com?subject=Job%20Application%20 Inquiry" class="contact-email-link">
               <span>cc.kmwong@gmail.com</span>
+              </a>
+            </div>
+            <div class="contact-detail">
+              <span>💼</span>
+              <a href="https://www.linkedin.com/in/carmen-wong-59a354432" target="_blank" rel="noopener noreferrer">My LinkedIn</a>
             </div>
             <div class="contact-detail">
               <span>📍</span>
               <span>London · Open to remote</span>
-            </div>
-            <div class="contact-detail">
-              <span>💼</span>
-              <span>LinkedIn profile (add your link here)</span>
             </div>
           </div>
           <form action="https://api.web3forms.com/submit" method="POST">
@@ -1047,7 +1210,7 @@
               </div>
               <div class="form-group">
                 <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Tell me about the role or project..." required></textarea>
+                <textarea id="message" name="message" placeholder="" required></textarea>
               </div>
               <button type="submit" class="btn btn-primary">Send Message</button>
             
