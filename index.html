@@ -28,7 +28,7 @@
     }
 
     html {
-      scroll-behavior: smooth;
+      scroll-behaviour: smooth;
     }
 
     body {
@@ -398,12 +398,13 @@
 
     .project-card {
       background: var(--surface);
-      border: 1px solid var(--border);
+      border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 18px;
       padding: 1.5rem;
       display: flex;
       flex-direction: column;
       gap: 0.85rem;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
       transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
     }
 
@@ -411,6 +412,60 @@
       transform: translateY(-4px);
       border-color: rgba(99, 102, 241, 0.35);
       box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .featured-project {
+      grid-column: span 3;
+      padding: 1.75rem;
+      border-color: rgba(251, 191, 36, 0.45);
+      background: linear-gradient(180deg, rgba(18, 24, 38, 0.96), rgba(13, 18, 28, 0.98));
+      box-shadow: 0 18px 40px rgba(99, 102, 241, 0.18);
+    }
+
+    .featured-project:hover {
+      transform: translateY(-5px);
+      border-color: rgba(251, 191, 36, 0.7);
+      box-shadow: 0 22px 48px rgba(99, 102, 241, 0.22);
+    }
+
+    .featured-project h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 1.25rem;
+    }
+
+    .featured-star {
+      color: #fbbf24;
+      font-size: 1.1rem;
+      text-shadow: 0 0 16px rgba(251, 191, 36, 0.7);
+    }
+
+    .secondary-featured {
+      grid-column: span 2;
+      padding: 1.65rem;
+      border-color: rgba(34, 211, 238, 0.45);
+      box-shadow: 0 14px 32px rgba(34, 211, 238, 0.12);
+      background: linear-gradient(180deg, rgba(17, 25, 35, 0.95), rgba(13, 19, 30, 0.98));
+      transform: scale(1.01);
+    }
+
+    .secondary-featured:hover {
+      border-color: rgba(34, 211, 238, 0.7);
+      box-shadow: 0 18px 38px rgba(34, 211, 238, 0.16);
+      transform: scale(1.02);
+    }
+
+    .secondary-featured h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .secondary-star {
+      color: #67e8f9;
+      font-size: 1rem;
+      text-shadow: 0 0 12px rgba(103, 232, 249, 0.7);
     }
 
     .project-icon {
@@ -560,6 +615,43 @@
 
     .other-skills {
       margin-top: 1.25rem;
+    }
+
+    .skill-category {
+      display: grid;
+      grid-template-columns: minmax(180px, 220px) 1fr;
+      align-items: start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .skill-category:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-category h3 {
+      font-size: 0.96rem;
+      letter-spacing: -0.01em;
+      margin: 0;
+      padding-top: 0.6rem;
+      line-height: 1.4;
+    }
+
+    .skill-category:nth-child(1) h3 { color: #93c5fd; }
+    .skill-category:nth-child(2) h3 { color: #67e8f9; }
+    .skill-category:nth-child(3) h3 { color: #6ee7b7; }
+    .skill-category:nth-child(4) h3 { color: #f9a8d4; }
+    .skill-category:nth-child(5) h3 { color: #fbbf24; }
+    .skill-category:nth-child(6) h3 { color: #c4b5fd; }
+
+    @media (max-width: 700px) {
+      .skill-category {
+        grid-template-columns: 1fr;
+      }
+
+      .skill-category h3 {
+        padding-top: 0;
+      }
     }
 
     /* Contact */
@@ -758,17 +850,17 @@
       <div class="container hero-content">
         <div class="eyebrow">
           <span class="eyebrow-dot"></span>
-            Data Scientist | Data Analyst | Financial Analyst 
+            Data Analyst | Data Scientist | Financial Analytics
           </div>
           <h1>HELLO <span> I'm Carmen Wong</span></h1>
         <p>
-          Combining 8 years of financial research experience with hands-on machine learning (ML) expertise, I build end-to-end automated 
-          analytics systems—from scalable data pipelines and real-time dashboards to predictive models and Natural Language Processing (NLP) 
-          tools—that transform complex data into clear, actionable, and cost-effective strategic insights.
+          Combining 8 years of financial research experience with hands-on expertise in data analytics and machine learning (ML), I build 
+          end-to-end analytics solutions—from automated data pipelines and interactive dashboards to predictive models and Natural Language Processing
+          (NLP) applications—that turn complex data into clear, actionable business insights.
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="https://github.com/cckmwong-data" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub Profile</a>
+          <a href="https://github.com/cckmwong-data" target="_blank" rel="noopener noreferrer" class="btn btn-primary">GitHub Profile</a>
         </div>
       </div>
     </section>
@@ -796,7 +888,7 @@
             <ul class="custom-list">
               <li class="custom-list-item"><span class="eyebrow-dot"></span><span>Research Analyst</span></li>
               <li class="custom-list-item"><span class="eyebrow-dot"></span><span>Data Analysis & Reporting</span></li>
-              <li class="custom-list-item"><span class="eyebrow-dot"></span><span>Data Visualization</span></li>
+              <li class="custom-list-item"><span class="eyebrow-dot"></span><span>Data Visualisation</span></li>
               <li class="custom-list-item"><span class="eyebrow-dot"></span><span>Financial Modelling &amp; Valuation</span></li>
             </ul>
           </div>
@@ -807,7 +899,7 @@
               <li class="custom-list-item"><span class="eyebrow-dot"></span><span>Equity Analysis</span></li>
               <li class="custom-list-item"><span class="eyebrow-dot"></span><span>Credit Risk Assessment</span></li>
               <li class="custom-list-item"><span class="eyebrow-dot"></span><span>NLP Sentiment</span></li>
-              <li class="custom-list-item"><span class="eyebrow-dot"></span><span>Accessible Application</span></li>
+              <li class="custom-list-item"><span class="eyebrow-dot"></span><span>Accessible Applications</span></li>
               <li class="custom-list-item"><span class="eyebrow-dot"></span><span>Customer Analytics</span></li>
               <li class="custom-list-item"><span class="eyebrow-dot"></span><span>Real Estate Analytics</span></li>
             </ul>
@@ -817,7 +909,7 @@
             <h3>Technical Stack</h3>
             <ul class="custom-list">
               <li class="custom-list-item"><span class="eyebrow-dot"></span><span><strong>Python, SQL, Power BI, Excel</strong></li>
-              <li class="custom-list-item"><span class="eyebrow-dot"></span><span><strong>ML &amp; NLP:</strong> Scikit-Learn, TensorFlow, SHAP</li>
+              <li class="custom-list-item"><span class="eyebrow-dot"></span><span><strong>ML &amp; NLP:</strong> scikit-learn, TensorFlow, SHAP</li>
               <li class="custom-list-item"><span class="eyebrow-dot"></span><span><strong>Deployment &amp; Cloud:</strong> BigQuery, Hugging Face, Streamlit, GitHub Actions</li>
               <li class="custom-list-item"><span class="eyebrow-dot"></span><span><strong>Financial Analysis:</strong> YFinance, TA-Lib</li>
             </ul>
@@ -833,13 +925,14 @@
           <h2>Featured Projects</h2>
           <p>
             Production-ready analytics and machine learning applications—spanning automated 
-            pipelines to interactive decision-support tools. <br>
-            <I>Since the applications run at zero cost, some of them are in sleep mode after a period of inactivity. Please press "Yes, get this app back up!" or "Restart this Space" to wake them up.</I>
+            pipelines to interactive decision-support tools.
+            <br><br>
+            <I>Note: Some applications are hosted on free-tier services and may enter sleep mode after periods of inactivity. If prompted, select "Yes, get this app back up!" or "Restart this Space" to launch the app.</I>
           </p>
         </div>
         <div class="projects-grid">
 
-          <article class="project-card">
+          <article class="project-card featured-project">
             <a href="https://app.powerbi.com/view?r=eyJrIjoiMzMyMDQ5ZjItM2ZkYi00MGYxLTliYzYtYjBkOTE4ZmE5ZGUyIiwidCI6IjZjMWQ0MTUyLTM5ZDAtNDRjYS04OGQ5LWI4ZDZkZGNhMDcwOCIsImMiOjEwfQ%3D%3D" target="_blank" rel="noopener noreferrer">
             <img 
               src="https://raw.githubusercontent.com/cckmwong-data/tech_email-alerts/main/images/valuation.png" 
@@ -848,26 +941,26 @@
             />
             </a>
             
-            <h3>OmniQuant Tech Analytics</h3>
+            <h3><span class="featured-star" aria-label="Featured project">★</span> OmniQuant Tech Analytics</h3>
             <p>
-              Analyzes US tech stocks through quantitative, fundamental, and technical lenses with daily AI-powered analysis.
-              Investment ratings are calculated via a weighted scoring system. Data refreshes daily after market close,
-              and email alerts are sent when price anomalies or trading signal changes are detected.
+              End-to-end financial analytics platform combining quantitative anomaly detection, DCF valuation, technical analysis, 
+              and AI-assisted market interpretation. Automated pipelines refresh market data daily, update Power BI dashboards, and 
+              trigger email alerts when price anomalies or trading-signal changes are detected.
             </p>
             <div class="project-meta">
               <span class="meta-pill">AI (Gemini 2.5)</span>
               <span class="meta-pill">LSTM Autoencoder</span>
-              <span class="meta-pill">DCF Modeling</span>
+              <span class="meta-pill">DCF Modelling</span>
               <span class="meta-pill">Power Automate</span>
               <span class="meta-pill">Power BI</span>
-              <span class="meta-pill">GitHub Action</span>
+              <span class="meta-pill">GitHub Actions</span>
             </div>
             <a href="https://github.com/cckmwong-data/tech_email-alerts" target="_blank" rel="noopener noreferrer" class="project-link">
               View on GitHub →
             </a>
           </article>
 
-          <article class="project-card">
+          <article class="project-card secondary-featured">
             <a href="https://app.powerbi.com/view?r=eyJrIjoiZjIyM2I2ZWYtMWNlMC00ZGVmLTkwMzQtMmVkZjcwNWU4MmQwIiwidCI6IjZjMWQ0MTUyLTM5ZDAtNDRjYS04OGQ5LWI4ZDZkZGNhMDcwOCIsImMiOjEwfQ%3D%3D" target="_blank" rel="noopener noreferrer">
               <img 
                 src="https://raw.githubusercontent.com/cckmwong-data/customer_segmentation/main/images/dashboard.png" 
@@ -875,16 +968,16 @@
                 style="width: 100%"
               />
             </a>
-            <h3>Customer Segmentation & Sales Intelligence</h3>
+            <h3>Customer Segmentation &amp; Sales Intelligence</h3>
             <p>
-              End-to-end customer segmentation application from raw data ingestion in Google Sheets, K-Prototypes clustering
-              for mixed numeric and categorical features, data warehousing in Google BigQuery, to daily-refreshed
-              Power BI dashboards — a fully automated, cloud-based, production-ready solution for marketing and sales teams.
+              Built an automated customer segmentation and sales intelligence pipeline using K-Prototypes, BigQuery, GitHub Actions, 
+              and Power BI. The solution identifies three actionable customer segments and automates the workflow from raw Google Sheets 
+              data through clustering, cloud warehousing, and daily BI dashboard refreshes.   
             </p>
             <div class="project-meta">
               <span class="meta-pill">K-Prototypes</span>
               <span class="meta-pill">BigQuery</span>
-              <span class="meta-pill">GitHub Action</span>
+              <span class="meta-pill">GitHub Actions</span>
               <span class="meta-pill">Power BI</span>
             </div>
             <a href="https://github.com/cckmwong-data/customer_segmentation" target="_blank" rel="noopener noreferrer" class="project-link">
@@ -902,12 +995,12 @@
             </a>
             <h3>LSTM–RoBERTa Sentiment Analyzer</h3>
             <p>
-              Developed machine learning pipelines - Long Short-Term Memory (LSTM) and RoBERTa transformer classify YouTube comment sentiment
-              as positive, neutral, or negative. Provides actionable insights to help organizations tailor products,
+              ML pipelines using Long Short-Term Memory (LSTM) and RoBERTa transformer to classify YouTube comment sentiment
+              as positive, neutral, or negative. Provides actionable insights to help organisations tailor products,
               marketing strategies, and customer service to improve user satisfaction.
             </p>
             <div class="project-meta">
-              <span class="meta-pill">Natural Language Processing</span>
+              <span class="meta-pill">NLP</span>
               <span class="meta-pill">LSTM Model</span>
               <span class="meta-pill">RoBERTa</span>
               <span class="meta-pill">Hugging Face</span>
@@ -928,15 +1021,15 @@
                 style="width: 100%; height: 200px; object-fit: contain;" 
               />
             </a>
-            <h3>Loan Approval Prediction App</h3>
+            <h3>Loan Repayment Prediction App</h3>
             <p>
-              Approval prediction using Logistic Regression to model borrower default risk,
-              with SHAP-based explainability and a Streamlit app for interactive what-if analysis and decision support.
+              Using Logistic Regression to predict loan repayment capability based on borrower characteristics, with SHAP-based 
+              explainability and an interactive Streamlit application for what-if analysis and decision support.
             </p>
             <div class="project-meta">
               <span class="meta-pill">Credit Analysis</span>
               <span class="meta-pill">Logistic Regression</span>
-              <span class="meta-pill">SHAP explainability</span>
+              <span class="meta-pill">SHAP Explainability</span>
               <span class="meta-pill">Streamlit</span>
             </div>
             <a href="https://github.com/cckmwong-data/credit_scoring" target="_blank" rel="noopener noreferrer" class="project-link">
@@ -961,7 +1054,7 @@
               deployed via Streamlit with text-to-speech output for accessibility — classifying messages as spam or ham (not spam).
             </p>
             <div class="project-meta">
-              <span class="meta-pill">Natural Language Processing</span>
+              <span class="meta-pill">NLP</span>
               <span class="meta-pill">Support Vector Machine</span>
               <span class="meta-pill">Streamlit</span>
             </div>
@@ -985,11 +1078,11 @@
             <p>
               A comprehensive report for London Real Insights Ltd., a hypothetical real estate agency.
               Provides management with a full view of property listings across London districts, with filters
-              for price, house features, and schools in the neighborhood.
+              for price, house features, and schools in the neighbourhood.
             </p>
             <div class="project-meta">
               <span class="meta-pill">Power BI</span>
-              <span class="meta-pill">Data Visualization</span>
+              <span class="meta-pill">Data Visualisation</span>
               <span class="meta-pill">Real Estate</span>
             </div>
             <a href="https://github.com/cckmwong-data/london_housing" target="_blank" rel="noopener noreferrer" class="project-link">
@@ -1007,40 +1100,69 @@
     <div class="container">
       <div class="section-head">
         <h2>Skills</h2>
-        <p>Technologies and tools used to build analytics solutions from data to delivery.</p>
+        <p>Core capabilities across analytics, modelling, BI, and business decision support.</p>
       </div>
       <div class="skills-wrap">
-        <div class="skills-grid">
-          <div class="skill-meter">
-            <div class="skill-meter-head"><span>Python</span><span class="skill-level">Advanced</span></div>
-            <div class="skill-meter-track" role="progressbar" aria-label="Python proficiency" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"><div class="skill-meter-fill" style="--skill-level: 90%;"></div></div>
-          </div>
-          <div class="skill-meter">
-            <div class="skill-meter-head"><span>SQL</span><span class="skill-level">Advanced</span></div>
-            <div class="skill-meter-track" role="progressbar" aria-label="SQL proficiency" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"><div class="skill-meter-fill" style="--skill-level: 85%;"></div></div>
-          </div>
-          <div class="skill-meter">
-            <div class="skill-meter-head"><span>Power BI</span><span class="skill-level">Advanced</span></div>
-            <div class="skill-meter-track" role="progressbar" aria-label="Power BI proficiency" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"><div class="skill-meter-fill" style="--skill-level: 95%;"></div></div>
-          </div>
-          <div class="skill-meter">
-            <div class="skill-meter-head"><span>Excel</span><span class="skill-level">Advanced</span></div>
-            <div class="skill-meter-track" role="progressbar" aria-label="Excel proficiency" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"><div class="skill-meter-fill" style="--skill-level: 90%;"></div></div>
+        <div class="skill-category">
+          <h3>Programming &amp; Analysis:</h3>
+          <div class="skill-tags-grid">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Excel</span>
+            <span class="skill-tag">R</span>
           </div>
         </div>
-      </div>
-    </div>
-  
-    <div class="container other-skills">
-      <div class="skills-wrap">
-        <div class="skill-tags-grid">
-          <span class="skill-tag">R</span>
-          <span class="skill-tag">NLP</span>
-          <span class="skill-tag">Machine Learning</span>
-          <span class="skill-tag">Data Engineering</span>
-          <span class="skill-tag">Cloud Automation</span>
-          <span class="skill-tag">Statistical Data Analysis</span>
-          <span class="skill-tag">Financial Modelling</span>
+
+        <div class="skill-category">
+          <h3>BI &amp; Visualisation:</h3>
+          <div class="skill-tags-grid">
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">DAX</span>
+            <span class="skill-tag">Power Query</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Machine Learning:</h3>
+          <div class="skill-tags-grid">
+            <span class="skill-tag">Classification</span>
+            <span class="skill-tag">Regression</span>
+            <span class="skill-tag">Clustering</span>
+            <span class="skill-tag">Deep Learning (LSTM)</span>
+            <span class="skill-tag">Time-Series Modelling</span>
+            <span class="skill-tag">Model Explainability (SHAP)</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>NLP &amp; Generative AI:</h3>
+          <div class="skill-tags-grid">
+            <span class="skill-tag">LLM Integration</span>
+            <span class="skill-tag">Google Gemini</span>
+            <span class="skill-tag">Transformers (RoBERTa)</span>
+            <span class="skill-tag">Sentiment Analysis</span>
+            <span class="skill-tag">Hugging Face</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Data Engineering &amp; Applications:</h3>
+          <div class="skill-tags-grid">
+            <span class="skill-tag">BigQuery</span>
+            <span class="skill-tag">ETL Pipelines</span>
+            <span class="skill-tag">API Integration</span>
+            <span class="skill-tag">GitHub Actions</span>
+            <span class="skill-tag">Streamlit</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Financial Analytics:</h3>
+          <div class="skill-tags-grid">
+            <span class="skill-tag">Financial Modelling</span>
+            <span class="skill-tag">Fundamental Analysis</span>
+            <span class="skill-tag">Technical Analysis</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1051,8 +1173,7 @@
       <div class="container">
         <div class="section-head">
           <h2>Educational Background</h2>
-          <p>Qualifications and professional certifications in engineering, finance, and analytics, in addition to a number of courses 
-            in data science including machine learning models and advanced algorithm development.
+          <p>Academic qualifications and professional training spanning engineering, financial analysis, business intelligence, data science, and machine learning.
           </p>
         </div>
         <div class="timeline">
@@ -1085,7 +1206,7 @@
               <h3>Python & Machine Learning for Financial Analysis</h3>
               <h3>Algorithmic Trading & Time Series Analysis in Python and R</h3>
               <p class="subtitle">Udemy</p>
-              <p>Briding courses to enhance skills in financial analysis and investment using data science and machine learning.</p>
+              <p>Covering financial analysis, algorithmic trading, time-series analysis, and machine learning.</p>
             </div>
           </div>
           <div class="timeline-item">
@@ -1093,7 +1214,7 @@
               <img src="https://raw.githubusercontent.com/cckmwong-data/portfolio/main/images/IBM.png" alt="HKUST Logo" class="marker-icon" style="width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
               </div>
             <div>
-              <h3>IBM: Analyzing Data with Python</h3>
+              <h3>IBM: Analysing Data with Python</h3>
               <h3>IBM: SQL for Data Science</h3>
               <p class="subtitle">edX</p>
               <p>Hands-on data analysis using Python and SQL.</p>
@@ -1114,9 +1235,9 @@
                 <img src="https://raw.githubusercontent.com/cckmwong-data/portfolio/main/images/cuhk.png" alt="CUHK Logo" class="marker-icon" style="width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
               </div>        
             <div>
-              <h3>Bachelor in System Engineering and Engineering Management (2004)</h3>
+              <h3>Bachelor in Systems Engineering and Engineering Management (2004)</h3>
               <p class="subtitle">The Chinese University of Hong Kong (CUHK)</p>
-              <p>Combining quantitative modeling, operations research, and system optimization with tech-driven management strategies.</p>
+              <p>Combining quantitative modelling, operations research, and system optimisation with tech-driven management strategies.</p>
             </div>
           </div>
         </div>
@@ -1128,7 +1249,7 @@
       <div class="container">
         <div class="section-head">
           <h2>Experience</h2>
-          <p>Industry experience grounded in quantitative analysis and financial modeling.</p>
+          <p>Industry experience grounded in quantitative analysis and financial modelling.</p>
         </div>
         <div class="timeline">
           <div class="timeline-item">
@@ -1163,7 +1284,7 @@
               <h3>Business Development Executive (2005 - 2008)</h3>
               <p class="subtitle">Avery Dennison, Hong Kong</p>
               <p>
-                Collaborated with the sales team of the UK office and the China production unit for providing
+                Collaborated with the sales team of the UK office and the China production unit to provide
                 printing labels solutions to major retail and supermarket chains in the UK.
               </p>
             </div>
